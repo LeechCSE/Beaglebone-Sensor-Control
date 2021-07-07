@@ -6,11 +6,11 @@ CFLAGS = -Wall -Wextra -g -lmraa -lm
 default: build
 
 build:
-	$(CC) $(CFLAGS) -o lab4b lab4b.c
+	$(CC) $(CFLAGS) -o src src.c
 
 invalid_check:
 	echo "... testing invalid option"
-	@./lab4b --xxx > /dev/null || \
+	@./src --xxx > /dev/null || \
 	if [ $$? -eq 1 ]; \
 	then \
 		echo -e "PASSED\n"; \
@@ -19,7 +19,7 @@ invalid_check:
 	fi
 
 	echo "... testing invalid argument"
-	@./lab4b --scale=X > /dev/null || \
+	@./src --scale=X > /dev/null || \
 	if [ $$? -eq 1 ]; \
 	then \
 		echo -e "PASSED\n"; \
@@ -31,7 +31,7 @@ normal_check: .SHELLFLAGS = -c eval
 normal_check: SHELL = bash -c 'eval "$${@//\\\\/}"'
 normal_check:
 	echo "... testing --scale=C --period=3 --log=test.log"
-	@./lab4b --scale=C --period=3 --log=test.log <<- EOF \
+	@./src --scale=C --period=3 --log=test.log <<- EOF \
 	SCALE=F \
 	PERIOD=1 \
 	STOP \
@@ -50,7 +50,7 @@ normal_check:
 check: build invalid_check normal_check
 
 clean:
-	@rm -f lab4b-204955724.tar.gz lab4b *.log
+	@rm -f src.tar.gz src *.log
 
 dist: build
-	@tar -czf lab4b-204955724.tar.gz lab4b.c README Makefile
+	@tar -czf src.tar.gz src.c README.md Makefile

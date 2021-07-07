@@ -5,13 +5,12 @@ Summer 2018
   
   
 Included files:
-* lab4b.c - source code in C-language for BBG embedded system that reads/prints
+* src.c - source code in C-language for BBG embedded system that reads/prints
   	    temperature, takes commands from stdin, and prints the response of
 	    command with current local time.
 * Makefile - contains the following targets:
   	     build (default), check (smoke-tests: invalid-option run
-	     and normal run), clean, and dist
-* README - this file
+	     and normal run), clean, and dist  
 
 Credits:
 * MRAA Documentation - https://iotdk.intel.com/docs/master/mraa/
