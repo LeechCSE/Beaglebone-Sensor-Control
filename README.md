@@ -1,3 +1,9 @@
+Beaglebone: sensor control
+==
+CS 111: Operating System Principles  
+Summer 2018
+  
+  
 Included files:
 * lab4b.c - source code in C-language for BBG embedded system that reads/prints
   	    temperature, takes commands from stdin, and prints the response of
